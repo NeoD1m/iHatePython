@@ -2,7 +2,6 @@ import math
 
 
 def func(n, m):
-    #print (sum2(n))
     return 92 * sum(n, m) - sum2(n)
 
 
