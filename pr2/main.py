@@ -13,4 +13,5 @@ def func(x):
 
 
 if __name__ == '__main__':
-    print ("%.2e" %  (math.e ** (85 ** 3)) + (85 ** 7))
+    print("%.2e" % func(222))
+    print("%.2e" % func(208))
