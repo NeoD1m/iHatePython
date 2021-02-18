@@ -100,30 +100,34 @@ def f23(list=[[]]):
         for j in range(len(list[i])):
             if "!" in list[i][j]:
                 list[i].append(list[i][j].split("!", 1)[1])
-                list[i][j+1] = list[i][j+1].split(" ", 1)[0]
+                list[i][j + 1] = list[i][j + 1].split(" ", 1)[0]
 
     for i in range(len(list)):  # Меняем фамилию и проценты местами
-        for j in range(len(list[i])-1):
+        for j in range(len(list[i]) - 1):
             if "!" in list[i][j]:
-                temp = list[i][j+1]
-                list[i][j+1] = list[i][j]
+                temp = list[i][j + 1]
+                list[i][j + 1] = list[i][j]
                 list[i][j] = temp
 
     for i in range(len(list)):  # Переводим числа в проценты
         for j in range(len(list[i])):
             if "!" in list[i][j]:
                 list[i][j] = list[i][j].split("!", 1)[0]
-                list[i][j] = str(int(round(float(list[i][j]), 2)*100))+"%"
+                list[i][j] = str(int(round(float(list[i][j]), 2) * 100)) + "%"
 
-    listMyList(list)
+    # listMyList([*zip(*list)])
+    return [*zip(*list)]
 
 
 if __name__ == '__main__':
-    # print(f21(['cuda', 'c', 1996, 1995]))
-    # print(f21(['pug', 'mako', 1967, 2010]))
-    # print(f21(['pug', 2019, 1967, 'mako']))
     f23([["besizak60@rambler.ru", None, "besizak60@rambler.ru", "2002-04-12", "0.899!Бесицак Федор"],
-         [None, None, None, None],
+         [None, None, None, None, None],
          ["nocman35@yandex.ru", None, "nocman35@yandex.ru", "2002-01-27", "0.729!Ночман Артур"],
          ["gordej5@rambler.ru", None, "gordej5@rambler.ru", " 1999-10-10", "0.560!Гибов Гордей"]
+         ])
+    f23([["vasilij45@gmail.com", None, "vasilij45@gmail.com", "2000-01-05", "0.759!Видко Василий"],
+         [None, None, None, None, None],
+         ["cizli81@yahoo.com", None, "cizli81@yahoo.com", "2004-12-13", "0.650!Чицли Павел"],
+         ["sebinman97@yahoo.com", None, "sebinman97@yahoo.com", "2003-04-08", "0.440!Шебинман Марк"],
+         ["vladimir77@mail.ru", None, "vladimir77@mail.ru", "2002-08-23", "0.520!Мовигко Владимир"],
          ])
