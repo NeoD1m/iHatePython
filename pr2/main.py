@@ -68,7 +68,43 @@ def f21(list=[]):
     return list
 
 
+def listMyList(list=[[], []]):
+    for i in range(len(list)):
+        print("\n")
+        for j in range(len(list[i])):
+            print(list[i][j], end=" ")
+
+
+def f23(list=[[]]):
+    for i in range(len(list)):  # Удаляем None
+        while None in list[i]:
+            list[i].remove(None)
+
+    for i in range(len(list) - 1):  # Удаляем пустые строки
+        if not list[i]:
+            list.remove(list[i])
+
+    for i in range(len(list)):  # Удаляем дубликаты
+        for j in range(len(list[i]) - 1):
+            if list[i].count(list[i][j]) > 1:
+                list[i].remove(list[i][j])
+
+    for i in range(len(list)):  # Удаляем @mail.ru и меняем - на /
+        for j in range(len(list[i]) - 1):
+            if "@" in list[i][j]:
+                list[i][j] = list[i][j].split("@", 1)[0]
+            if "-" in list[i][j]:
+                list[i][j] = list[i][j].replace("-", "/")
+
+    listMyList(list)
+
+
 if __name__ == '__main__':
-    print(f21(['cuda', 'c', 1996, 1995]))
-    print(f21(['pug', 'mako', 1967, 2010]))
-    print(f21(['pug', 2019, 1967, 'mako']))
+    # print(f21(['cuda', 'c', 1996, 1995]))
+    # print(f21(['pug', 'mako', 1967, 2010]))
+    # print(f21(['pug', 2019, 1967, 'mako']))
+    print(f23([["besizak60@rambler.ru", None, "besizak60@rambler.ru", "2002-04-12", "0.899!Бесицак Федор"],
+               [None, None, None, None],
+               ["nocman35@yandex.ru", None, "nocman35@yandex.ru", "2002-01-27", "0.729!Ночман Артур"],
+               ["gordej5@rambler.ru", None, "gordej5@rambler.ru", " 1999-10-10", "0.560!Гибов Гордей"]
+               ]))
