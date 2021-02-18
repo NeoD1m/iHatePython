@@ -30,9 +30,45 @@ def f22(my_hexdata):
 
 
 def f21(list=[]):
+    if 2010 in list:
+        return 13
+    elif 1995 in list:
+        if 'c' in list:
+            if 'pug' in list:
+                return 5
+            elif 'cuda' in list:
+                return 6
+        elif 'mako' in list:
+            if 1967 in list:
+                return 2
+            elif 1996 in list:
+                return 3
+            elif 1960 in list:
+                return 4
+        elif 'lfe' in list:
+            if 'pug' in list:
+                return 0
+            elif 'cuda' in list:
+                return 1
+    elif 2019 in list:
+        if 'c' in list:
+            return 12
+        elif 'mako' in list:
+            if 1967 in list:
+                return 9
+            elif 1996 in list:
+                return 10
+            elif 1960 in list:
+                return 11
+        elif 'lfe' in list:
+            if 'pug' in list:
+                return 7
+            elif 'cuda' in list:
+                return 8
     return list
 
 
 if __name__ == '__main__':
-    print(f22("0xd139a832"))
-    print(f22("0x6afb6fe4"))
+    print(f21(['cuda', 'c', 1996, 1995]))
+    print(f21(['pug', 'mako', 1967, 2010]))
+    print(f21(['pug', 2019, 1967, 'mako']))
